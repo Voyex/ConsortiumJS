@@ -1,0 +1,27 @@
+{
+  "name": "consortiumjs",
+  "version": "1.0.0",
+  "description": "A website for the group Consortium",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Voyex/ConsortiumJS.git"
+  },
+  "author": "Mitchell Haley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Voyex/ConsortiumJS/issues"
+  },
+  "homepage": "https://github.com/Voyex/ConsortiumJS#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.29.0"
+  }
+}
