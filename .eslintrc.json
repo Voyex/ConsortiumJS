@@ -4,12 +4,19 @@
         "es2021": true,
         "node": true
     },
-    "extends": "eslint:recommended",
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
     "overrides": [
     ],
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": "latest"
     },
+    "plugins": [
+        "@typescript-eslint"
+    ],
     "rules": {
         "indent": [
             "error",
@@ -29,7 +36,7 @@
         ],
         "max-len": 0, // This rule is unimportant
         "no-tabs": 0, // This rule is unimportant
-        "no-inline-comments": 0 // Inline Comments cna be beneficial
-    
+        "no-inline-comments": 0, // Inline Comments cna be beneficial
+        "@typescript-eslint/no-explicit-any": 0 // Conflicts with no-implicit-any
     }
 }
