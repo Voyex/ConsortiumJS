@@ -4,8 +4,9 @@ import bcrypt from "bcrypt";
 import bodyParser from "body-parser";
 import router from "./api-router";
 import cors from "cors";
-// Enables use of environment variables
-require("dotenv").config();
+import dotenv from 'dotenv';
+// Enable the use of environment variables
+dotenv.config();
 
 // Constants
 const app: express.Application = express();

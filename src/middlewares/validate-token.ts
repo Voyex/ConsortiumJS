@@ -2,6 +2,10 @@ import jwt from 'jsonwebtoken';
 import { VerifyErrors } from 'jsonwebtoken';
 import { Request, Response, NextFunction } from 'express';
 import { UserPayload } from '/user-payload.type';
+import dotenv from 'dotenv';
+// Enable the use of environment variables
+dotenv.config();
+
 /**
  * A piece of middleware that authenticates the JWT provided
  * @param {Request} req HTTPS Request
