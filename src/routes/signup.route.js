@@ -8,16 +8,16 @@ router.use('/', async (req, res) => {
     const password = req.body?.password;
 
     if (!(email && password)) {
-        return res.status(400).send({error: "Missing email or password"});
+        return res.status(400).send({error: 'Missing email or password'});
     }
 
     const hashedPass = await bcrypt.hash(password, 10);
 
     const sqlStatment = 'INSERT INTO user (email, password) VALUES (?,?)';
-    conn.execute(sqlStatment, [email, hashedPass]).then((result) => {
-        return res.status(200).send({message: "User created successfully"});
-    }).catch((err) => {
-        return res.status(500).send({error: "Failed to create user"});
+    conn.execute(sqlStatment, [email, hashedPass]).then(() => {
+        return res.status(200).send({message: 'User created successfully'});
+    }).catch(() => {
+        return res.status(500).send({error: 'Failed to create user'});
     });
 });
 

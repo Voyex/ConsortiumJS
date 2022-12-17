@@ -2,7 +2,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
-const routes = require('./routes');
+const routes = require('./api-router');
 const cors = require('cors');
 // Enables use of environment variables
 require('dotenv').config();
