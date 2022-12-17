@@ -13,7 +13,7 @@
     "rules": {
         "indent": [
             "error",
-            "tab"
+            2
         ],
         "linebreak-style": [
             "error",
@@ -28,10 +28,8 @@
             "always"
         ],
         "max-len": 0, // This rule is unimportant
-        "valid-jsdoc": 0, // This rule is unimportant
         "no-tabs": 0, // This rule is unimportant
-        "indent": 0, // This rule is unimportant
-        "no-inline-comments": 0 // Inline Comments are good
+        "no-inline-comments": 0 // Inline Comments cna be beneficial
     
     }
 }
