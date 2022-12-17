@@ -17,16 +17,16 @@ app.use(cors({}));
 // For accepting post data from requests
 app.use(bodyParser.json());
 app.use(
-	bodyParser.urlencoded({
-		extended: true,
-	}),
+  bodyParser.urlencoded({
+    extended: true,
+  }),
 );
 // Register routes
 app.use(routes);
 
 // Start the server
 app.listen(port, () => {
-	console.log(`Listening on port: ${port}`);
+  console.log(`Listening on port: ${port}`);
 });
 
 module.exports = app;
