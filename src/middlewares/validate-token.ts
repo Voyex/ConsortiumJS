@@ -33,7 +33,7 @@ const authenticateToken = (req: Request, res: Response, next: NextFunction): voi
     return;
   }
 
-  const secret = process.env?.ACCESS_TOKEN_SECRET ?? '';
+  const secret = process.env?.ACCESS_TOKEN_SECRET ?? ''; // Make sure the secret exists
   jwt.verify(accessToken, secret, (err: VerifyErrors | null, payload: any): void => {
     const userData: UserPayload = payload;
 
