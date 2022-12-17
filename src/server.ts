@@ -4,6 +4,7 @@ import bcrypt from "bcrypt";
 import bodyParser from "body-parser";
 import router from "./api-router";
 import cors from "cors";
+import cookieParser from 'cookie-parser'
 import dotenv from 'dotenv';
 // Enable the use of environment variables
 dotenv.config();
@@ -21,6 +22,8 @@ app.use(
     extended: true,
   })
 );
+// Allow cookies to be accessed
+app.use(cookieParser());
 // Register routes
 app.use(router);
 
