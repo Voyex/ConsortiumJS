@@ -1,7 +1,7 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const bcrypt = require('bcrypt');
-const conn = require('../configs/connectdb');
+import bcrypt from 'bcrypt';
+import conn from '../configs/connectdb';
 
 router.use('/', async (req, res) => {
   const email = req.body?.email;
@@ -21,4 +21,4 @@ router.use('/', async (req, res) => {
   });
 });
 
-module.exports = router;
+export default router;

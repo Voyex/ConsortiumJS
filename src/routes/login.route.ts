@@ -1,7 +1,6 @@
-const express = require('express');
-const router = express.Router();
-const bcrypt = require('bcrypt');
-const conn = require('../configs/connectdb');
+import { Router } from 'express';
+const router = Router();
+import conn from '../configs/connectdb';
 
 router.post('/', async (req, res) => {
   const email = req.body?.email;
@@ -27,9 +26,9 @@ router.post('/', async (req, res) => {
   }
 
   // Return an error of the user could not be found
-  if (result?.length <= 0) {
-    return res.status(401).send({error: 'Incorrect email or password'});
-  }
+  // if (result?.length <= 0) {
+  //   return res.status(401).send({error: 'Incorrect email or password'});
+  // }
 });
 
-module.exports = router;
+export default router;

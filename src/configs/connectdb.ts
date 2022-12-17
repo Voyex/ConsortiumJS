@@ -1,8 +1,9 @@
-const mysql = require('mysql2/promise');
+import mysql from 'mysql2/promise';
 
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
-const conn = mysql.createPool({
+const conn: mysql.Pool = mysql.createPool({
   host: 'donationmanagement.org',
   port: 3306,
   database: 'consortium',
@@ -11,4 +12,4 @@ const conn = mysql.createPool({
   connectionLimit: 10,
 });
 
-module.exports = conn;
+export default conn;

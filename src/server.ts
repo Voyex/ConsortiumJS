@@ -1,16 +1,15 @@
 // Imports
-const express = require('express');
-const bcrypt = require('bcrypt');
-const bodyParser = require('body-parser');
-const routes = require('./api-router');
-const cors = require('cors');
+import express from "express";
+import bcrypt from "bcrypt";
+import bodyParser from "body-parser";
+import router from "./api-router";
+import cors from "cors";
 // Enables use of environment variables
-require('dotenv').config();
+require("dotenv").config();
 
 // Constants
-const app = express();
+const app: express.Application = express();
 const port = process.env.PORT || 3000;
-
 
 // CORS
 app.use(cors({}));
@@ -19,10 +18,10 @@ app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
     extended: true,
-  }),
+  })
 );
 // Register routes
-app.use(routes);
+app.use(router);
 
 // Start the server
 app.listen(port, () => {
