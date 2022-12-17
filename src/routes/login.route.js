@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
 
 	// Email and Password are required feilds
 	if (!(email && password)) {
-		return res.status(400).send({error: "Missing email or password"});
+		return res.status(400).send({error: 'Missing email or password'});
 	}
 	
 	/* 
@@ -28,7 +28,7 @@ router.post('/', async (req, res) => {
 
 	// Return an error of the user could not be found
 	if (result?.length <= 0) {
-		return res.status(401).send({error: "Incorrect email or password"});
+		return res.status(401).send({error: 'Incorrect email or password'});
 	}
 });
 
