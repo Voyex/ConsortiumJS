@@ -1,10 +1,10 @@
 // Imports
-import express from "express";
-import bcrypt from "bcrypt";
-import bodyParser from "body-parser";
-import router from "./api-router";
-import cors from "cors";
-import cookieParser from 'cookie-parser'
+import express from 'express';
+import bcrypt from 'bcrypt';
+import bodyParser from 'body-parser';
+import router from './api-router';
+import cors from 'cors';
+import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 // Enable the use of environment variables
 dotenv.config();
