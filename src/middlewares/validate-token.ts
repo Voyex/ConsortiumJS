@@ -13,7 +13,7 @@ dotenv.config();
  * @param {NextFunction} next continue from the middleware
  * @returns {void}
  */
-const authenticateToken = (req: Request, res: Response, next: NextFunction): void => {
+export const authenticateToken = (req: Request, res: Response, next: NextFunction): void => {
   // DEV Code: Don't authenticate if you are not in production
   // if (args.isProd === 'false') {
   //   return next();
@@ -47,5 +47,3 @@ const authenticateToken = (req: Request, res: Response, next: NextFunction): voi
     return next();
   });
 };
-
-module.exports = authenticateToken;

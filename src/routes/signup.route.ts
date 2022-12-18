@@ -1,9 +1,9 @@
 import express from 'express';
 const router = express.Router();
 import bcrypt from 'bcrypt';
-import conn from '../configs/connectdb';
+import { conn } from '../configs/connectdb';
 
-router.use('/', async (req, res) => {
+export default router.use('/', async (req, res) => {
   const email = req.body?.email;
   const password = req.body?.password;
 
@@ -20,5 +20,3 @@ router.use('/', async (req, res) => {
     return res.status(500).send({error: 'Failed to create user'});
   });
 });
-
-export default router;
