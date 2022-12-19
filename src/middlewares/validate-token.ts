@@ -1,8 +1,8 @@
 import jwt from 'jsonwebtoken';
 import { VerifyErrors } from 'jsonwebtoken';
 import { Request, Response, NextFunction } from 'express';
-import { UserPayload } from '/user-payload.type';
 import dotenv from 'dotenv';
+import { UserData } from '../models/user/user-data.model';
 // Enable the use of environment variables
 dotenv.config();
 
@@ -35,15 +35,15 @@ export const authenticateToken = (req: Request, res: Response, next: NextFunctio
 
   const secret = process.env?.ACCESS_TOKEN_SECRET ?? ''; // Make sure the secret exists
   jwt.verify(accessToken, secret, (err: VerifyErrors | null, payload: any): void => {
-    const userData: UserPayload = payload;
+    payload as UserData;
 
     if (err) {
       res.status(403).send();
       return;
     }
     // Grab data from the payload and add it to the request
-    req.body.email = userData.email;
-    req.body.id = userData.id;
+    req.body.email = payload.email;
+    req.body.id = payload.id;
     return next();
   });
 };
