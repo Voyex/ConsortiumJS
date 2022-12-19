@@ -1,5 +1,6 @@
 {
   "singleQuote": true,
+  "singleAttributePerLine": true,
   "parser": "typescript",
   "printWidth":120
 }
